@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Pre-Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #575757;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1518655048521-f130df041f66') no-repeat center center/cover;
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+    .bike-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 400px;
+    }
+    .bike-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background: #ff4500;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .btn:hover {
+      background: #e63900;
+    }
+    form input, form select {
+      width: 90%;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      padding: 10px 20px;
+      background: #28a745;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+    form button:hover {
+      background: #218838;
+    }
+
+    /* color selection */
+    .color-options {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 15px 0;
+    }
+    .color-box {
+      width: 25px;
+      height: 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+    .color-box:hover {
+      border: 2px solid #333;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1> Bike Pre-Booking</h1>
+    <p>Reserve your dream bike today!</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#book">Book Now</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>Your Next Ride Awaits 🚀</h2>
+  </section>
+
+  <div class="container">
+    <h2>Available Bikes</h2>
+
+    <div class="bike-card">
+      <img id="reImage" src="https://shop.yamaha-motor-india.com/cdn/shop/products/METALLICBLACK_312f6ed1-ab19-478d-b7b5-ac97de82d66b_2048x.webp?v=1754026443" alt="Bike">
+      <h3>Yamaha MT15</h3>
+
+      <!-- color options -->
+      <div class="color-options">
+        <div class="color-box" style="background: black;" onclick="changeBike('reImage','reBlack')"></div>
+        <div class="color-box" style="background: #37F5EB;" onclick="changeBike('reImage','mat cyan')"></div>
+      </div>
+
+      <p>Price: ₹2,00,000</p>
+      <a class="btn" href="#book">Pre-Book</a>
+    </div>
+  <div class="bike-card">
+      <img id="yamahaImage" src="https://shop.yamaha-motor-india.com/cdn/shop/products/DARKKNIGHT_b8850ea8-98cb-4845-bff2-f023b4c36d3c_2048x.png?v=1704789964" alt="Bike">
+      <h3>Yamaha R15 V4</h3>
+
+      <!-- color options -->
+      <div class="color-options">
+        <div class="color-box" style="background: black;" onclick="changeBike('yamahaImage','black')"></div>
+        <div class="color-box" style="background: red;" onclick="changeBike('yamahaImage','red')"></div>
+        <div class="color-box" style="background: blue;" onclick="changeBike('yamahaImage','blue')"></div>
+      </div>
+
+      <p>Price: ₹1,80,000</p>
+      <a class="btn" href="#book">Pre-Book</a>
+    </div>
+  </div>
+    <div class="container" id="book">
+    <h2>Pre-Booking Form</h2>
+    <form action="confirmation.html">
+      <input type="text" name="name" placeholder="Your Name" required><br>
+      <input type="email" name="email" placeholder="Email Address" required><br>
+      <input type="tel" name="phone" placeholder="Phone Number" required><br>
+      <select name="bike" required>
+        <option value="">Select Bike</option>
+        <option value="Royal Enfield">Royal Enfield Classic 350</option>
+        <option value="Yamaha">Yamaha R15 V4</option>
+      </select><br>
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+
+  <script>
+    function changeBike(imgId, variant) {
+      const img = document.getElementById(imgId);
+
+      // Royal Enfield variants
+      if (variant === "reBlack") {
+        img.src = "https://shop.yamaha-motor-india.com/cdn/shop/products/METALLICBLACK_312f6ed1-ab19-478d-b7b5-ac97de82d66b_2048x.webp?v=1754026443"; 
+      } else if (variant === "mat cyan") {
+        img.src = "https://shop.yamaha-motor-india.com/cdn/shop/files/METALLIC_SILVER_CYAN_2048x.webp?v=1754026443"; 
+      } 
+
+      // Yamaha variants
+      if (variant === "black") {
+        img.src = "https://shop.yamaha-motor-india.com/cdn/shop/products/DARKKNIGHT_b8850ea8-98cb-4845-bff2-f023b4c36d3c_2048x.png?v=1704789964";
+      } else if (variant === "red") {
+        img.src = "https://shop.yamaha-motor-india.com/cdn/shop/files/Red_2048x.webp?v=1704789964";
+      }else if (variant === "blue") {
+        img.src = "https://shop.yamaha-motor-india.com/cdn/shop/files/Racing-Blue_2048x.webp?v=1704789964"; 
+      }
+    }
+  </script>
+</body>
+</html>
