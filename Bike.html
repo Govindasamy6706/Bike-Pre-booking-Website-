@@ -136,7 +136,7 @@
         <div class="color-box" style="background: #37F5EB;" onclick="changeBike('reImage','mat cyan')"></div>
       </div>
 
-      <p>Price: ₹2,00,000</p>
+      <p>Price: ₹1,40,000</p>
       <a class="btn" href="#book">Pre-Book</a>
     </div>
   <div class="bike-card">
@@ -150,7 +150,7 @@
         <div class="color-box" style="background: blue;" onclick="changeBike('yamahaImage','blue')"></div>
       </div>
 
-      <p>Price: ₹1,80,000</p>
+      <p>Price: ₹2,00,000</p>
       <a class="btn" href="#book">Pre-Book</a>
     </div>
   </div>
@@ -162,7 +162,7 @@
       <input type="tel" name="phone" placeholder="Phone Number" required><br>
       <select name="bike" required>
         <option value="">Select Bike</option>
-        <option value="Royal Enfield">Yamaha MT15</option>
+        <option value="Yamaha MT15">Yamaha MT15</option>
         <option value="Yamaha">Yamaha R15 V4</option>
       </select><br>
       <button type="submit">Confirm Booking</button>
@@ -173,14 +173,14 @@
     function changeBike(imgId, variant) {
       const img = document.getElementById(imgId);
 
-      // Royal Enfield variants
+      // Yamaha MT15 variants
       if (variant === "reBlack") {
         img.src = "https://shop.yamaha-motor-india.com/cdn/shop/products/METALLICBLACK_312f6ed1-ab19-478d-b7b5-ac97de82d66b_2048x.webp?v=1754026443"; 
       } else if (variant === "mat cyan") {
         img.src = "https://shop.yamaha-motor-india.com/cdn/shop/files/METALLIC_SILVER_CYAN_2048x.webp?v=1754026443"; 
       } 
 
-      // Yamaha variants
+      // Yamaha R15 V4 variants
       if (variant === "black") {
         img.src = "https://shop.yamaha-motor-india.com/cdn/shop/products/DARKKNIGHT_b8850ea8-98cb-4845-bff2-f023b4c36d3c_2048x.png?v=1704789964";
       } else if (variant === "red") {
